@@ -2,9 +2,9 @@
 backend built with django for class project
 install all requirements:
 
-'pip install requirements.txt'
+`pip install requirements.txt`
 
 activate virtual enviroment:
 
-'pipenv shell'
+`pipenv shell`
 
