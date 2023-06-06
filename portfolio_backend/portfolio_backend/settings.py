@@ -90,7 +90,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',  # or 'django.db.backends.postgresql', 'django.db.backends.sqlite3', etc.
         'NAME': 'portfolio',
         'USER': 'mbishu',
-        'PASSWORD': 'bItO2002',
+        'PASSWORD': 'bito2002',
         'HOST': 'mbishu.mysql.pythonanywhere-services.com',  # For PythonAnywhere, this would typically be 'your-username.mysql.pythonanywhere-services.com'
         'PORT': '3306',  # For example, '3306' for MySQL
     }
