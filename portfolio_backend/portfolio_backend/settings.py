@@ -88,7 +88,7 @@ WSGI_APPLICATION = 'portfolio_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # or 'django.db.backends.postgresql', 'django.db.backends.sqlite3', etc.
-        'NAME': 'portfolio',
+        'NAME': '$portfolio',
         'USER': 'mbishu',
         'PASSWORD': 'bito2002',
         'HOST': 'mbishu.mysql.pythonanywhere-services.com',  # For PythonAnywhere, this would typically be 'your-username.mysql.pythonanywhere-services.com'
