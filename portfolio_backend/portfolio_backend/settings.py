@@ -20,10 +20,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-%$uh5*!nel)pu_yzdmu)&0$zpxvajkeefq!2l-15f-c_y$&szm'
+import os
+from django.core.management.utils import get_random_secret_key
+
+# ...
+
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_random_secret_key())
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -81,8 +87,12 @@ WSGI_APPLICATION = 'portfolio_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',  # or 'django.db.backends.postgresql', 'django.db.backends.sqlite3', etc.
+        'NAME': 'portfolio',
+        'USER': 'mbishu',
+        'PASSWORD': 'bItO2002',
+        'HOST': 'mbishu.mysql.pythonanywhere-services.com',  # For PythonAnywhere, this would typically be 'your-username.mysql.pythonanywhere-services.com'
+        'PORT': '3306',  # For example, '3306' for MySQL
     }
 }
 
@@ -122,7 +132,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-import os
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
