@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'portfolio_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',  # or 'django.db.backends.postgresql', 'django.db.backends.sqlite3', etc.
-        'NAME': '$portfolio',
-        'USER': 'mbishu',
-        'PASSWORD': 'bito2002',
-        'HOST': 'mbishu.mysql.pythonanywhere-services.com',  # For PythonAnywhere, this would typically be 'your-username.mysql.pythonanywhere-services.com'
-        'PORT': '3306',  # For example, '3306' for MySQL
+        'NAME': os.environ.get('DATABASE_NAME'),
+        'USER': os.environ.get('DATABASE_USER'),
+        'PASSWORD':os.environ.get('DATABASE_PASSWORD'),
+        'HOST': 'mbishu.mysql.pythonanywhere-services.com',  
+        'PORT': '3306', 
     }
 }
 
